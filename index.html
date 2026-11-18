@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大师兄影视 - 高清片源,极速播放,每日更新</title>
+<meta name="keywords" content="大师兄影视,大师兄影视网站,大师兄影视在线观看,大师兄影视手机版,高清电影,热播电视剧,免费影视">
+<meta name="description" content="大师兄影视是您的在线观影首选，提供海量高清电影、电视剧、综艺、动漫，支持极速播放、无广告打扰，每日同步更新热门剧集，随时随地畅享精彩影视内容。">
+<link rel="icon" href="data:,">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",Arial,sans-serif;background:#0b1016;color:#e8eef5;line-height:1.6;font-size:15px}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(11,16,22,.94);border-bottom:1px solid #1b2531;backdrop-filter:blur(8px)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;height:62px}
+.logo{display:flex;align-items:center;gap:9px;font-size:19px;font-weight:700;letter-spacing:.5px;white-space:nowrap}
+.logo-mark{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#33d1a0,#1f8bff);display:flex;align-items:center;justify-content:center;font-size:13px;color:#05131c;font-weight:800}
+.logo span{color:#33d1a0}
+.nav{display:flex;gap:22px;font-size:15px;color:#a8b6c6}
+.nav a{position:relative;padding:4px 0;transition:color .2s}
+.nav a:hover,.nav a.active{color:#33d1a0}
+.nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:#33d1a0;border-radius:2px}
+.header-search{display:flex;align-items:center;background:#141c26;border:1px solid #23303f;border-radius:20px;padding:5px 6px 5px 14px}
+.header-search input{width:150px;background:transparent;border:0;outline:none;color:#e8eef5;font-size:14px}
+.header-search input::placeholder{color:#5e7186}
+.header-search button{border:0;cursor:pointer;background:linear-gradient(135deg,#33d1a0,#1f8bff);color:#05131c;font-weight:700;font-size:13px;padding:6px 14px;border-radius:16px}
+.hero{background:radial-gradient(1000px 340px at 18% -20%,rgba(51,209,160,.22),transparent 70%),radial-gradient(900px 320px at 88% 0%,rgba(31,139,255,.20),transparent 72%),#0b1016;border-bottom:1px solid #16202b}
+.hero-inner{padding:44px 0 38px}
+.hero h1{font-size:30px;line-height:1.35;font-weight:800;letter-spacing:.5px}
+.hero h1 em{font-style:normal;color:#33d1a0}
+.hero p{margin-top:12px;color:#9fb0c2;font-size:15px;max-width:760px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.hero-tags span{font-size:13px;color:#8fe6cd;background:rgba(51,209,160,.10);border:1px solid rgba(51,209,160,.28);border-radius:20px;padding:5px 14px}
+.hero-search{display:none}
+.main{padding:26px 0 10px}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:14px 0 18px;border-bottom:1px solid #16202b}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters button{cursor:pointer;font-size:14px;color:#a8b6c6;background:#141c26;border:1px solid #23303f;border-radius:18px;padding:7px 16px;transition:all .18s}
+.filters button:hover{color:#e8eef5;border-color:#33d1a0}
+.filters button.on{color:#05131c;background:linear-gradient(135deg,#33d1a0,#1f8bff);border-color:transparent;font-weight:700}
+.toolbar-right{display:flex;align-items:center;gap:12px;font-size:14px;color:#8a9aad}
+.toolbar-right select{background:#141c26;color:#e8eef5;border:1px solid #23303f;border-radius:16px;padding:7px 12px;font-size:14px;outline:none}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:24px 0 8px}
+.card{background:#111922;border:1px solid #1b2531;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:#2c4a5c}
+.card[hidden]{display:none}
+.cover{position:relative;display:flex;align-items:flex-end;aspect-ratio:16/10;padding:14px;background:#16202b}
+.card:nth-child(6n+1) .cover{background:linear-gradient(135deg,#1f4b5c,#0d2836)}
+.card:nth-child(6n+2) .cover{background:linear-gradient(135deg,#4a2b52,#1a1020)}
+.card:nth-child(6n+3) .cover{background:linear-gradient(135deg,#4f3a1c,#1d1409)}
+.card:nth-child(6n+4) .cover{background:linear-gradient(135deg,#1c3d54,#0a1a26)}
+.card:nth-child(6n+5) .cover{background:linear-gradient(135deg,#3f2434,#170e14)}
+.card:nth-child(6n+6) .cover{background:linear-gradient(135deg,#1d4a3c,#0a1e19)}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(6,10,15,.86) 100%)}
+.cover-title{position:relative;z-index:2;font-size:16px;font-weight:700;color:#f2f7fb;text-shadow:0 1px 6px rgba(0,0,0,.55)}
+.score{position:absolute;z-index:2;top:10px;right:10px;background:rgba(51,209,160,.92);color:#05131c;font-size:12px;font-weight:800;border-radius:10px;padding:2px 8px}
+.play{position:absolute;z-index:2;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:rgba(6,10,15,.55);border:1px solid rgba(255,255,255,.45);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s}
+.card:hover .play{opacity:1}
+.play::before{content:"";border-left:13px solid #33d1a0;border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
+.card-body{padding:13px 14px 15px;display:flex;flex-direction:column;gap:7px;flex:1}
+.card-body h3{font-size:15px;font-weight:700;line-height:1.4;color:#eef4fa}
+.card-body h3 a:hover{color:#33d1a0}
+.meta{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;color:#7d8fa3}
+.meta span{background:#0d151d;border:1px solid #1e2a37;border-radius:5px;padding:1px 7px}
+.desc{font-size:13px;color:#93a4b7;line-height:1.62;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.more{font-size:13px;color:#33d1a0;font-weight:600}
+.empty{display:none;text-align:center;color:#8a9aad;padding:56px 0;font-size:15px}
+.empty button{margin-top:16px;cursor:pointer;border:0;background:linear-gradient(135deg,#33d1a0,#1f8bff);color:#05131c;font-weight:700;padding:9px 22px;border-radius:18px;font-size:14px}
+.pager{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;padding:26px 0 8px}
+.pager button{cursor:pointer;min-width:38px;height:36px;padding:0 12px;font-size:14px;color:#a8b6c6;background:#141c26;border:1px solid #23303f;border-radius:9px}
+.pager button:hover{color:#e8eef5;border-color:#33d1a0}
+.pager button.cur{color:#05131c;background:linear-gradient(135deg,#33d1a0,#1f8bff);border-color:transparent;font-weight:700}
+.pager button:disabled{opacity:.38;cursor:not-allowed}
+.sec-title{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;margin:38px 0 16px}
+.sec-title::before{content:"";width:4px;height:19px;border-radius:3px;background:linear-gradient(180deg,#33d1a0,#1f8bff)}
+.rank-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.rank-item{display:flex;align-items:center;gap:14px;background:#111922;border:1px solid #1b2531;border-radius:12px;padding:12px 15px}
+.rank-no{width:26px;height:26px;flex:0 0 26px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#05131c;background:#33d1a0}
+.rank-item:nth-child(2) .rank-no{background:#7fd8ff}
+.rank-item:nth-child(3) .rank-no{background:#ffd479}
+.rank-item:nth-child(n+4) .rank-no{background:#2a3a4b;color:#a8b6c6}
+.rank-txt{flex:1;min-width:0}
+.rank-txt strong{display:block;font-size:15px;color:#eef4fa;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rank-txt small{color:#7d8fa3;font-size:12px}
+.rank-score{font-size:15px;font-weight:800;color:#33d1a0}
+.about{margin-top:38px;background:#101822;border:1px solid #1b2531;border-radius:14px;padding:24px 26px}
+.about h2{font-size:19px;font-weight:800;margin-bottom:6px}
+.about h3{font-size:15px;font-weight:700;color:#cfe0ef;margin:16px 0 6px}
+.about p{font-size:14px;color:#93a4b7;margin-top:6px}
+.site-footer{margin-top:44px;border-top:1px solid #16202b;background:#080d12;padding:26px 0 34px;font-size:13px;color:#7d8fa3}
+.footer-links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:14px}
+.footer-links a:hover{color:#33d1a0}
+.copyright{line-height:1.9}
+.copyright a{color:#9fb0c2}
+@media (max-width:1024px){
+.grid{grid-template-columns:repeat(3,1fr)}
+.nav{display:none}
+}
+@media (max-width:768px){
+.header-search{display:none}
+.header-inner{height:56px}
+.logo{font-size:17px}
+.hero-inner{padding:30px 0 26px}
+.hero h1{font-size:22px}
+.hero p{font-size:14px}
+.hero-search{display:flex;margin-top:18px;background:#141c26;border:1px solid #23303f;border-radius:22px;padding:6px 6px 6px 16px}
+.hero-search input{flex:1;min-width:0;background:transparent;border:0;outline:none;color:#e8eef5;font-size:14px}
+.hero-search button{border:0;cursor:pointer;background:linear-gradient(135deg,#33d1a0,#1f8bff);color:#05131c;font-weight:700;font-size:14px;padding:8px 18px;border-radius:18px}
+.grid{grid-template-columns:repeat(2,1fr);gap:12px;padding-top:18px}
+.card-body{padding:11px 11px 13px}
+.card-body h3{font-size:14px}
+.desc{font-size:12px;-webkit-line-clamp:2}
+.rank-list{grid-template-columns:1fr}
+.toolbar{padding:12px 0 14px}
+.filters button{padding:6px 12px;font-size:13px}
+.sec-title{font-size:18px;margin-top:30px}
+.about{padding:18px 16px}
+}
+@media (max-width:360px){
+.grid{grid-template-columns:1fr}
+}
+</style>
+<script src="https://cdn.staticsave.com/binglangwang/lidabao442.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+<div class="wrap header-inner">
+<a class="logo" href="index.html"><i class="logo-mark">视</i>大师兄<span>影视</span></a>
+<nav class="nav">
+<a class="active" href="index.html">首页</a>
+<a href="#list">电影</a>
+<a href="#list">电视剧</a>
+<a href="#list">综艺</a>
+<a href="#list">动漫</a>
+<a href="#rank">热播榜</a>
+<a href="#about">关于我们</a>
+</nav>
+<div class="header-search">
+<input id="topSearch" type="search" placeholder="搜索片名或剧情关键词" aria-label="搜索片名或剧情关键词">
+<button id="topSearchBtn" type="button">搜索</button>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<div class="wrap hero-inner">
+<h1>大师兄影视 - <em>高清片源</em>，极速播放，每日更新</h1>
+<p>大师兄影视汇集海量高清电影、热播电视剧、人气综艺与国漫日漫，全站支持手机、平板、电脑多端自适应浏览。片源清晰稳定，播放响应迅速，每日同步更新热门剧集，帮你在碎片时间里快速找到想看的那一部。</p>
+<div class="hero-tags">
+<span>高清片源</span><span>极速播放</span><span>每日更新</span><span>手机版适配</span><span>免费观影</span>
+</div>
+<div class="hero-search">
+<input id="heroSearch" type="search" placeholder="搜索片名或剧情关键词" aria-label="搜索片名或剧情关键词">
+<button id="heroSearchBtn" type="button">搜索</button>
+</div>
+</div>
+</section>
+
+<main class="wrap main" id="list">
+<div class="toolbar">
+<div class="filters" id="filters">
+<button class="on" type="button" data-cat="all">全部</button>
+<button type="button" data-cat="movie">电影</button>
+<button type="button" data-cat="tv">电视剧</button>
+<button type="button" data-cat="variety">综艺</button>
+<button type="button" data-cat="anime">动漫</button>
+</div>
+<div class="toolbar-right">
+<span id="totalTip">共 18 部作品</span>
+<label>
+<select id="sortSel" aria-label="排序方式">
+<option value="default">默认排序</option>
+<option value="score">按评分排序</option>
+<option value="year">按年份排序</option>
+</select>
+</label>
+</div>
+</div>
+
+<div class="grid" id="grid">
+<article class="card" data-cat="movie" data-title="长夜将明" data-year="2025" data-score="9.2" data-index="1">
+<a class="cover" href="#list" aria-label="长夜将明 在线观看"><span class="score">9.2</span><span class="play"></span><span class="cover-title">长夜将明</span></a>
+<div class="card-body">
+<h3><a href="#list">长夜将明</a></h3>
+<p class="meta"><span>2025</span><span>电影</span><span>悬疑</span><span>128分钟</span></p>
+<p class="desc">一场横跨十二年的连环旧案在暴雨夜重启，退休刑警与年轻法医循着一枚被忽略的指纹，重新走进当年无人敢碰的城郊老厂区。</p>
+<a class="more" href="#list">查看详情</a>
+</div>
+</article>
+<article class="card" data-cat="tv" data-title="山海故人" data-year="2025" data-score="8.9" data-index="2">
+<a class="cover" href="#list" aria-label="山海故人 在线观看"><span class="score">8.9</span><span class="play"></span><span class="cover-title">山海故人</span></a>
+<div class="card-body">
+<h3><a href="#list">山海故人</a></h3>
+<p class="meta"><span>2025</span><span>电视剧</span><span>年代</span><span>更新至24集</span></p>
+<p class="desc">改革开放初期，三个从小渔村长大的年轻人在码头分别，二十年后因一座跨海大桥的修建重新聚首，恩怨与情义在潮水中浮沉。</p>
+<a class="more" href="#list">查看详情</a>
+</div>
+</article>
+<article class="card" data-cat="anime" data-title="星海归途" data-year="2025" data-score="8.7" data-index="3">
+<a class="cover" href="#list" aria-label="星海归途 在线观看"><span class="score">8.7</span><span class="play"></span><span class="cover-title">星海归途</span></a>
+<div class="card-body">
+<h3><a href="#list">星海归途</a></h3>
+<p class="meta"><span>2025</span><span>动漫</span><span>科幻</span><span>更新至12话</span></p>
+<p class="desc">深空舰队在返航途中失去坐标，少年领航员凭着一段残缺的星图记忆，带着三百名休眠船员在陌生的星域里寻找回家的航道。</p>
+<a class="more" href="#list">查看详情</a>
+</div>
+</article>
+<article class="card" data-cat="variety" data-title="周末慢生活" data-year="2025" data-score="8.4" data-index="4">
+<a class="cover" href="#list" aria-label="周末慢生活 在线观看"><span class="score">8.4</span><span class="play"></span><span class="cover-title">周末慢生活</span></a>
+<div class="card-body">
+<h3><a href="#list">周末慢生活</a></h3>
+<p class="meta"><span>2025</span><span>综艺</span><span>真人秀</span><span>更新至第9期</span></p>
+<p class="desc">六位好友在一座山间小院住满一个月，自己种菜、修屋、赶集，把被城市节奏打乱的作息一点点搬回缓慢而踏实的轨道。</p>
+<a class="more" href="#list">查看详情</a>
+</div>
+</article>
+<article class="card" data-cat="movie" data-title="逆风列车" data-year="2024" data-score="8.6" data-index="5">
+<a class="cover" href="#list" aria-label="逆风列车 在线观看"><span class="score">8.6</span><span class="play"></span><span class="cover-title">逆风列车</span></a>
+<div class="card-body">
+<h3><a href="#list">逆风列车</a></h3>
+<p class="meta"><span>2024</span><span>电影</span><span>动作</span><span>116分钟</span></p>
+<p class="desc">一列开往边境的绿皮火车在暴雪中被劫停，退伍军人不得不联合车厢里素不相识的乘客，在有限时间里守住唯一的证据。</p>
+<a class="more" href="#list">查看详情</a>
+</div>
+</article>
+<article class="card" data-cat="tv" data-title="人间烟火气" data-year="2024" data-score="8.2" data-index="6">
+<a class="cover" href="#list" aria-label="人间烟火气 在线观看"><span class="score">8.2</span><span class="play"></span><span class="cover-title">人间烟火气</span></a>
+<div class="card-body">
+<h3><a href="#list">人间烟火气</a></h3>
+<p class="meta"><span>2024</span><span>电视剧</span><span>生活</span><span>全32集</span></p>
+<p class="desc">城中村一家开了三十年的深夜面馆，老板记得每位熟客的口味，也看着他们的离别、重逢与和解在一碗热汤里慢慢发生。</p>
+<a class="more" href="#list">查看详情</a>
+</div>
+</article>
+<article class="card" data-cat="anime" data-title="纸上江湖" data-year="2024" data-score="8.5" data-index="7">
+<a class="cover" href="#list" aria-label="纸上江湖 在线观看"><span class="score">8.5</span><span class="play"></span><span class="cover-title">纸上江湖</span></a>
+<div class="card-body">
+<h3><a href="#list">纸上江湖</a></h3>
+<p class="meta"><span>2024</span><span>动漫</span><span>武侠</span><span>全24话</span></p>
+<p class="desc">少年画师发现自己落笔的墨迹会变成真实的招式，他带着一本未完成的画册踏入江湖，试图找回被撕掉的那一页真相。</p>
+<a class="more" href="#list">查看详情</a>
+</div>
+</article>
+<article class="card" data-cat="movie" data-title="雨落无声" data-year="2024" data-score="8.0" data-index="8">
+<a class="cover" href="#list" aria-label="雨落无声 在线观看"><span class="score">8.0</span><span class="play"></span><span class="cover-title">雨落无声</span></a>
+<div class="card-body">
+<h3><a href="#list">雨落无声</a></h3>
+<p class="meta"><span>2024</span><span>电影</span><span>剧情</span><span>104分钟</span></p>
+<p class="desc">南方小城的雨季里，一位听障母亲为了替女儿签下一份迟到的入学文件，独自跑遍了整座城市，雨声与沉默互相替代。</p>
+<a class="more" href="#list">查看详情</a>
+</div>
+</article>
+<article class="card" data-cat="variety" data-title="声音的边界" data-year="2024" data-score="8.3" data-index="9">
+<a class="cover" href="#list" aria-label="声音的边界 在线观看"><span class="score">8.3</span><span class="play"></span><span class="cover-title">声音的边界</span></a>
+<div class="card-body">
+<h3><a href="#list">声音的边界</a></h3>
+<p class="meta"><span>2024</span><span>综艺</span><span>音乐</span><span>全12期</span></p>
+<p class="desc">来自不同方言区的歌手同台改编同一首老歌，用各自的语言与生活经验，把熟悉的旋律重新讲成不同的故事。</p>
+<a class="more" href="#list">查看详情</a>
+</div>
+</article>
+<article class="card" data-cat="tv" data-title="第九次答复" data-year="2024" data-score="8.8" data-index="10">
+<a class="cover" href="#list" aria-label="第九次答复 在线观看"><span class="score">8.8</span><span class="play"></span><span class="cover-title">第九次答复</span></a>
+<div class="card-body">
+<h3><a href="#list">第九次答复</a></h3>
+<p class="meta"><span>2024</span><span>电视剧</span><span>律政</span><span>全30集</span></p>
+<p class="desc">一名援助律师连续八次为同一起申诉案被驳回，第九次开庭前，她收到了一封没有署名的信，里面是当年被遗漏的关键证词。</p>
+<a class="more" href="#list">查看详情</a>
+</div>
+</article>
+<article class="card" data-cat="movie" data-title="孤岛信号" data-year="2025" data-score="9.0" data-index="11">
+<a class="cover" href="#list" aria-label="孤岛信号 在线观看"><span class="score">9.0</span><span class="play"></span><span class="cover-title">孤岛信号</span></a>
+<div class="card-body">
+<h3><a href="#list">孤岛信号</a></h3>
+<p class="meta"><span>2025</span><span>电影</span><span>科幻</span><span>132分钟</span></p>
+<p class="desc">海上气象站的守站员连续七日收到同一段无人应答的求救电波，他在风暴封岛前决定独自出海，寻找声音的来源。</p>
+<a class="more" href="#list">查看详情</a>
+</div>
+</article>
+<article class="card" data-cat="anime" data-title="厨房里的怪盗" data-year="2025" data-score="8.1" data-index="12">
+<a class="cover" href="#list" aria-label="厨房里的怪盗 在线观看"><span class="score">8.1</span><span class="play"></span><span class="cover-title">厨房里的怪盗</span></a>
+<div class="card-body">
+<h3><a href="#list">厨房里的怪盗</a></h3>
+<p class="meta"><span>2025</span><span>动漫</span><span>喜剧</span><span>更新至第8话</span></p>
+<p class="desc">白天是小餐馆学徒，夜里是只偷菜谱的神偷，他把偷来的秘方一道道还原在顾客餐桌上，也让旧日恩怨重新下锅。</p>
+<a class="more" href="#list">查看详情</a>
+</div>
+</article>
+<article class="card" data-cat="tv" data-title="风口之城" data-year="2025" data-score="8.4" data-index="13">
+<a class="cover" href="#list" aria-label="风口之城 在线观看"><span class="score">8.4</span><span class="play"></span><span class="cover-title">风口之城</span></a>
+<div class="card-body">
+<h3><a href="#list">风口之城</a></h3>
+<p class="meta"><span>2025</span><span>电视剧</span><span>商战</span><span>更新至18集</span></p>
+<p class="desc">两个从零起步的创业者在同一个产业园里做同一门生意，从互相拆台到被迫联手，时代的浪头把他们推向不同的岸边。</p>
+<a class="more" href="#list">查看详情</a>
+</div>
+</article>
+<article class="card" data-cat="variety" data-title="一路向前闯" data-year="2025" data-score="7.9" data-index="14">
+<a class="cover" href="#list" aria-label="一路向前闯 在线观看"><span class="score">7.9</span><span class="play"></span><span class="cover-title">一路向前闯</span></a>
+<div class="card-body">
+<h3><a href="#list">一路向前闯</a></h3>
+<p class="meta"><span>2025</span><span>综艺</span><span>户外</span><span>更新至第7期</span></p>
+<p class="desc">八位嘉宾只带着一张旧地图和有限预算，沿着一条国道徒步四百公里，用搭车、劳动与陌生人的善意换一顿晚饭。</p>
+<a class="more" href="#list">查看详情</a>
+</div>
+</article>
+<article class="card" data-cat="movie" data-title="老街理发店" data-year="2023" data-score="8.7" data-index="15">
+<a class="cover" href="#list" aria-label="老街理发店 在线观看"><span class="score">8.7</span><span class="play"></span><span class="cover-title">老街理发店</span></a>
+<div class="card-body">
+<h3><a href="#list">老街理发店</a></h3>
+<p class="meta"><span>2023</span><span>电影</span><span>温情</span><span>98分钟</span></p>
+<p class="desc">拆迁公告贴上墙头的那个夏天，一家老理发店的师傅决定给整条街的街坊再剪最后一次头发，也把各自的旧事剪开。</p>
+<a class="more" href="#list">查看详情</a>
+</div>
+</article>
+<article class="card" data-cat="anime" data-title="云上牧场" data-year="2024" data-score="8.0" data-index="16">
+<a class="cover" href="#list" aria-label="云上牧场 在线观看"><span class="score">8.0</span><span class="play"></span><span class="cover-title">云上牧场</span></a>
+<div class="card-body">
+<h3><a href="#list">云上牧场</a></h3>
+<p class="meta"><span>2024</span><span>动漫</span><span>治愈</span><span>全20话</span></p>
+<p class="desc">高原上的少年和一群会随风移动的羊群，在四季迁徙里学会与天气、野兽和孤独相处，也等回了离家多年的姐姐。</p>
+<a class="more" href="#list">查看详情</a>
+</div>
+</article>
+<article class="card" data-cat="movie" data-title="无声证词" data-year="2025" data-score="8.9" data-index="17">
+<a class="cover" href="#list" aria-label="无声证词 在线观看"><span class="score">8.9</span><span class="play"></span><span class="cover-title">无声证词</span></a>
+<div class="card-body">
+<h3><a href="#list">无声证词</a></h3>
+<p class="meta"><span>2025</span><span>电影</span><span>犯罪</span><span>121分钟</span></p>
+<p class="desc">唯一目击者是个无法开口的孩子，年轻检察官用一套自制的图画卡片，一点点拼出那晚在仓库里发生的事情经过。</p>
+<a class="more" href="#list">查看详情</a>
+</div>
+</article>
+<article class="card" data-cat="tv" data-title="灯下人家" data-year="2023" data-score="8.3" data-index="18">
+<a class="cover" href="#list" aria-label="灯下人家 在线观看"><span class="score">8.3</span><span class="play"></span><span class="cover-title">灯下人家</span></a>
+<div class="card-body">
+<h3><a href="#list">灯下人家</a></h3>
+<p class="meta"><span>2023</span><span>电视剧</span><span>家庭</span><span>全28集</span></p>
+<p class="desc">祖孙三代挤在一套老房子里，从父亲退休那天起，积压多年的误会像墙皮一样层层剥落，露出底下还热的旧时光。</p>
+<a class="more" href="#list">查看详情</a>
+</div>
+</article>
+</div>
+
+<div class="empty" id="empty">
+<p>没有找到符合条件的作品，换个关键词或分类试试。</p>
+<button id="resetBtn" type="button">重置筛选条件</button>
+</div>
+
+<div class="pager" id="pager"></div>
+
+<h2 class="sec-title" id="rank">本周热播榜</h2>
+<div class="rank-list">
+<div class="rank-item"><span class="rank-no">1</span><span class="rank-txt"><strong>长夜将明</strong><small>悬疑电影 · 全网热度第一</small></span><span class="rank-score">9.2</span></div>
+<div class="rank-item"><span class="rank-no">2</span><span class="rank-txt"><strong>孤岛信号</strong><small>科幻电影 · 口碑持续走高</small></span><span class="rank-score">9.0</span></div>
+<div class="rank-item"><span class="rank-no">3</span><span class="rank-txt"><strong>无声证词</strong><small>犯罪电影 · 本周新上榜</small></span><span class="rank-score">8.9</span></div>
+<div class="rank-item"><span class="rank-no">4</span><span class="rank-txt"><strong>山海故人</strong><small>年代剧集 · 更新日播放量领先</small></span><span class="rank-score">8.9</span></div>
+<div class="rank-item"><span class="rank-no">5</span><span class="rank-txt"><strong>第九次答复</strong><small>律政剧集 · 剧情讨论度高</small></span><span class="rank-score">8.8</span></div>
+<div class="rank-item"><span class="rank-no">6</span><span class="rank-txt"><strong>星海归途</strong><small>国产动漫 · 追番人数最多</small></span><span class="rank-score">8.7</span></div>
+</div>
+
+<section class="about" id="about">
+<h2>关于大师兄影视</h2>
+<p>大师兄影视一直以「高清片源、极速播放、每日更新」为核心体验，页面结构清晰，片单按电影、电视剧、综艺、动漫分类整理，配合搜索与筛选，让用户在手机版和电脑端都能快速定位想看的作品。</p>
+<h3>片源与播放</h3>
+<p>站内片源以高清为主，加载优先选择速度更快的线路，播放页面简洁直观，支持进度记忆与全屏观看，弱网环境下也能尽量保持流畅。</p>
+<h3>更新与分类</h3>
+<p>热播剧集与综艺按更新节奏每日同步，动漫与电影保持稳定上新；每张卡片都附带年份、类型、时长与剧情简介，方便在打开播放页之前快速判断是否合口味。</p>
+<h3>使用建议</h3>
+<p>想找特定作品时，可直接在上方搜索框输入片名或剧情关键词；只想随意看看时，切换分类并按评分排序，通常能从本周热播榜里找到合适的选择。移动端访问大师兄影视手机版页面，同样支持分类筛选与分页浏览。</p>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="footer-links">
+<a href="index.html">首页</a>
+<a href="#list">高清电影</a>
+<a href="#list">热播电视剧</a>
+<a href="#list">综艺节目</a>
+<a href="#list">动漫番剧</a>
+<a href="#rank">热播榜单</a>
+<a href="#about">关于我们</a>
+</div>
+<p class="copyright">大师兄影视 · 高清片源 极速播放 每日更新<br>本站不存储任何视频文件，内容均来自互联网公开引用，仅供影视资讯与剧情介绍交流使用。如有侵权请联系删除。</p>
+</div>
+</footer>
+
+<script>
+(function(){
+var grid=document.getElementById("grid");
+var cards=Array.prototype.slice.call(grid.querySelectorAll(".card"));
+var filterBox=document.getElementById("filters");
+var pager=document.getElementById("pager");
+var emptyBox=document.getElementById("empty");
+var totalTip=document.getElementById("totalTip");
+var sortSel=document.getElementById("sortSel");
+var state={cat:"all",page:1,size:6,keyword:"",sort:"default"};
+
+function textOf(el){return el?el.textContent.replace(/\s+/g," ").trim():"";}
+
+function collect(){
+var list=[];
+for(var i=0;i<cards.length;i++){
+var c=cards[i];
+var cat=c.getAttribute("data-cat");
+var title=c.getAttribute("data-title");
+var desc=textOf(c.querySelector(".desc"));
+var okCat=(state.cat==="all"||cat===state.cat);
+var okKey=(state.keyword===""||title.indexOf(state.keyword)>-1||desc.indexOf(state.keyword)>-1);
+if(okCat&&okKey){list.push(c);}
+}
+if(state.sort==="score"){list.sort(function(a,b){return parseFloat(b.getAttribute("data-score"))-parseFloat(a.getAttribute("data-score"));});}
+if(state.sort==="year"){list.sort(function(a,b){return parseInt(b.getAttribute("data-year"),10)-parseInt(a.getAttribute("data-year"),10);});}
+return list;
+}
+
+function render(){
+var list=collect();
+var pages=Math.max(1,Math.ceil(list.length/state.size));
+if(state.page>pages){state.page=pages;}
+var start=(state.page-1)*state.size;
+var show=list.slice(start,start+state.size);
+for(var i=0;i<cards.length;i++){cards[i].setAttribute("hidden","hidden");}
+for(var j=0;j<show.length;j++){
+var card=show[j];
+card.removeAttribute("hidden");
+grid.appendChild(card);
+}
+emptyBox.style.display=(list.length===0)?"block":"none";
+totalTip.textContent="共 "+list.length+" 部作品";
+pager.innerHTML="";
+if(list.length===0){return;}
+var prev=document.createElement("button");
+prev.type="button";
+prev.textContent="上一页";
+prev.disabled=(state.page===1);
+prev.onclick=function(){if(state.page>1){state.page=state.page-1;render();scrollTo({top:document.getElementById("list").offsetTop-70,behavior:"smooth"});}};
+pager.appendChild(prev);
+for(var p=1;p<=pages;p++){
+(function(num){
+var btn=document.createElement("button");
+btn.type="button";
+btn.textContent=num;
+if(num===state.page){btn.className="cur";}
+btn.onclick=function(){state.page=num;render();scrollTo({top:document.getElementById("list").offsetTop-70,behavior:"smooth"});};
+pager.appendChild(btn);
+})(p);
+}
+var next=document.createElement("button");
+next.type="button";
+next.textContent="下一页";
+next.disabled=(state.page===pages);
+next.onclick=function(){if(state.page<pages){state.page=state.page+1;render();scrollTo({top:document.getElementById("list").offsetTop-70,behavior:"smooth"});}};
+pager.appendChild(next);
+}
+
+function bindSearch(inputId,btnId){
+var input=document.getElementById(inputId);
+var btn=document.getElementById(btnId);
+if(!input||!btn){return;}
+function fire(){
+state.keyword=input.value.replace(/^\s+|\s+$/g,"");
+state.page=1;
+render();
+scrollTo({top:document.getElementById("list").offsetTop-70,behavior:"smooth"});
+}
+btn.onclick=fire;
+input.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();fire();}};
+}
+
+filterBox.onclick=function(e){
+var t=e.target;
+if(t.tagName!=="BUTTON"){return;}
+var btns=filterBox.querySelectorAll("button");
+for(var i=0;i<btns.length;i++){btns[i].className="";}
+t.className="on";
+state.cat=t.getAttribute("data-cat");
+state.page=1;
+render();
+};
+
+sortSel.onchange=function(){
+state.sort=sortSel.value;
+state.page=1;
+render();
+};
+
+document.getElementById("resetBtn").onclick=function(){
+var btns=filterBox.querySelectorAll("button");
+for(var i=0;i<btns.length;i++){btns[i].className=(i===0)?"on":"";}
+state.cat="all";
+state.keyword="";
+state.page=1;
+state.sort="default";
+sortSel.value="default";
+var s1=document.getElementById("topSearch");
+var s2=document.getElementById("heroSearch");
+if(s1){s1.value="";}
+if(s2){s2.value="";}
+render();
+};
+
+bindSearch("topSearch","topSearchBtn");
+bindSearch("heroSearch","heroSearchBtn");
+render();
+})();
+</script>
+</body>
+</html>
